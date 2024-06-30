@@ -3,14 +3,19 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"io"
 	"log"
 	"net"
 	"time"
 )
 
-func main() {
-	listener, err := net.Listen("tcp", ":8000")
+func _main() {
+	portPtr := flag.Int("port", int(8000), "The port number to run")
+	flag.Parse()
+
+	listener, err := net.Listen("tcp", fmt.Sprintf("localhost:%d", *portPtr))
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -25,7 +30,7 @@ func main() {
 	}
 }
 
-func handleConn(c net.Conn) {
+func _handleConn(c net.Conn) {
 	defer c.Close()
 	for {
 		_, err := io.WriteString(c, time.Now().Format("15:04:05\n"))

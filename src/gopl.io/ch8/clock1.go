@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func main() {
+func _main() {
 	listener, err := net.Listen("tcp", ":8000")
 	if err != nil {
 		log.Fatal(err)
@@ -25,7 +25,7 @@ func main() {
 	}
 }
 
-func handleConn(c net.Conn) {
+func _handleConn(c net.Conn) {
 	defer c.Close()
 	for {
 		_, err := io.WriteString(c, time.Now().Format("15:04:05\n"))
