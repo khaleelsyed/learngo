@@ -1,7 +1,8 @@
-# Dockerised Go project template
+# Environment to learn go
 
-A simple template that can be used to get a quick go project that has already been dockerised.
+A simple place to document some cool learnings as I learn go.
 
-## TODO
+## Preparing environment
 
-Used docker build stages to have a stage to build the executable and a production stage to run it
+1. ```cp example.env .env```
+2. Ammend the environment variables if needed
