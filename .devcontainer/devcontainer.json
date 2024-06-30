@@ -1,5 +1,5 @@
 {
-	"name": "GoDocker Template",
+	"name": "Learn Go",
 	"dockerComposeFile": [
 		"../docker-compose.yml",
 		"docker-compose.yml"
@@ -10,7 +10,6 @@
 		"ghcr.io/devcontainers/features/git:1": {}
 	},
 	"mounts": [
-		"type=bind,source=~/.ssh/id_GitHub,target=/home/gopher/.ssh/id_GitHub,readonly",
-		"type=bind,source=${localWorkspaceFolder}/.devcontainer/ssh_config,target=/home/gopher/.ssh/config,readonly"
+		"type=bind,source=~/.ssh/id_GitHub,target=/home/gopher/.ssh/id_rsa,readonly"
 	]
 }
